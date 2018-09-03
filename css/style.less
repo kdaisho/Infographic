@@ -1,0 +1,99 @@
+// out: style.css
+@import url(https://fonts.googleapis.com/css?family=Nosifer|Roboto);
+@import "partials/reset";
+@import "partials/general";
+
+@red: #e00;
+
+.my-app {
+    background: @red;
+    display: grid;
+    grid-gap: .5em;
+    padding: .5em;
+}
+
+.head {
+    .title {
+        font-family: 'Nosifer', sans-serif;
+        text-align: center;
+    }
+}
+
+.check {
+    width: 1.25em;
+    vertical-align: middle;
+}
+
+.subtitle {
+    font-family: 'Nosifer', sans-serif;
+    // font-size: 1.5em;
+    text-align: center;
+}
+
+.img-responsive {
+    width: 100%;
+}
+
+.fact {
+
+    &.is-one {
+        .item {
+            text-align: center;
+            &:nth-of-type(1) {
+               .suicide {
+                   width: 1.5em;
+               }
+            }
+            .desc {
+
+                // font-family: 'Butcherman', cursive;
+            }
+            .suicide {
+                width: 6em;
+            }
+
+        }
+    }
+    &.is-two {
+        text-align: center;
+        .main-img {
+            width: 6em;
+        }
+        .item {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            .item-icon {
+                flex: 0 0 12%;
+                width: 1.25em;
+                padding-right: 1em;
+            }
+            .desc {
+
+            }
+        }
+    }
+    &.is-three {
+        .item {
+            text-align: center;
+            .desc {
+                line-height: 1.2;
+            }
+            .item-img {
+                &:nth-of-type(1) {
+                    width: 3em;
+                }
+            }
+        }
+    }
+    &.is-four {
+        .item {
+            text-align: center;
+        }
+    }
+    &.is-five {
+        .item {
+            text-align: center;
+        }
+    }
+}

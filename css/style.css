@@ -1,0 +1,176 @@
+@import url(https://fonts.googleapis.com/css?family=Nosifer|Roboto);
+/* ========== Reset Styles =========== */
+/* http://meyerweb.com/eric/tools/css/reset/
+	 v2.0 | 20110126
+	 License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+em,
+img,
+ol,
+ul,
+li,
+form,
+label,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+details,
+embed,
+figure,
+footer,
+header,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  /* font: inherit; */
+  /* vertical-align: baseline; */
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+figure,
+footer,
+header,
+section {
+  display: block;
+}
+div {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body * {
+  font-family: 'Butcherman', cursive;
+  font-size: 100%;
+  color: #e00;
+  background: #222;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.pad-1 {
+  padding: 1em;
+}
+.pad-2 {
+  padding: .75em;
+}
+.pad-tb-1 {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.pad-tb-2 {
+  padding-top: .75em;
+  padding-bottom: .75em;
+}
+.size-1 {
+  font-size: 2.3em;
+}
+.size-2 {
+  font-size: 1.75em;
+}
+.size-3 {
+  font-size: 1.5em;
+}
+.size-4 {
+  font-size: 1.25em;
+}
+.size-5 {
+  font-size: 1.1em;
+}
+.my-app {
+  background: #e00;
+  display: grid;
+  grid-gap: .5em;
+  padding: .5em;
+}
+.head .title {
+  font-family: 'Nosifer', sans-serif;
+  text-align: center;
+}
+.check {
+  width: 1.25em;
+  vertical-align: middle;
+}
+.subtitle {
+  font-family: 'Nosifer', sans-serif;
+  text-align: center;
+}
+.img-responsive {
+  width: 100%;
+}
+.fact.is-one .item {
+  text-align: center;
+}
+.fact.is-one .item:nth-of-type(1) .suicide {
+  width: 1.5em;
+}
+.fact.is-one .item .suicide {
+  width: 6em;
+}
+.fact.is-two {
+  text-align: center;
+}
+.fact.is-two .main-img {
+  width: 6em;
+}
+.fact.is-two .item {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.fact.is-two .item .item-icon {
+  flex: 0 0 12%;
+  width: 1.25em;
+  padding-right: 1em;
+}
+.fact.is-three .item {
+  text-align: center;
+}
+.fact.is-three .item .desc {
+  line-height: 1.2;
+}
+.fact.is-three .item .item-img:nth-of-type(1) {
+  width: 3em;
+}
+.fact.is-four .item {
+  text-align: center;
+}
+.fact.is-five .item {
+  text-align: center;
+}
