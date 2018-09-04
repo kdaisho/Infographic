@@ -4,6 +4,10 @@ body * {
   color: #e00;
   background: #222;
 }
+@media (min-width: 1024px) {
+}
+@media (min-width: 1440px) {
+}
 .uppercase {
   text-transform: uppercase;
 }
@@ -35,4 +39,9 @@ body * {
 }
 .size-5 {
   font-size: 1.1em;
+}
+@media (min-width: 1024px) {
+  .size-2 {
+    font-size: 1.25em;
+  }
 }

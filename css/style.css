@@ -81,6 +81,10 @@ body * {
   color: #e00;
   background: #222;
 }
+@media (min-width: 1024px) {
+}
+@media (min-width: 1440px) {
+}
 .uppercase {
   text-transform: uppercase;
 }
@@ -113,14 +117,34 @@ body * {
 .size-5 {
   font-size: 1.1em;
 }
+@media (min-width: 1024px) {
+  .size-2 {
+    font-size: 1.25em;
+  }
+}
 .my-app {
   background: #e00;
   display: grid;
   grid-gap: .5em;
   padding: .5em;
+  grid-template-areas: "heading" "factOne" "factTwo" "factThree" "factFour" "factFive";
 }
-.head .title {
+@media (min-width: 1024px) {
+  .my-app {
+    grid-template-areas: "heading heading heading heading" "factOne factOne factTwo factTwo" "factThree belly factTwo factTwo" "factThree factFour factFour factFive";
+    grid-template-columns: 1fr auto .5fr .5fr;
+    grid-template-rows: .25fr 1fr auto auto;
+  }
+}
+.heading {
+  display: flex;
+  align-items: center;
+  grid-area: heading;
+  justify-content: center;
+}
+.heading .title {
   font-family: 'Nosifer', sans-serif;
+  max-width: 22em;
   text-align: center;
 }
 .check {
@@ -134,20 +158,47 @@ body * {
 .img-responsive {
   width: 100%;
 }
+.fact.is-one {
+  grid-area: factOne;
+}
+@media (min-width: 1024px) {
+  .fact.is-one .items {
+    display: flex;
+    justify-content: space-around;
+  }
+}
 .fact.is-one .item {
   text-align: center;
 }
 .fact.is-one .item:nth-of-type(1) .suicide {
-  width: 1.5em;
+  width: 1.5rem;
 }
 .fact.is-one .item .suicide {
-  width: 6em;
+  width: 6rem;
 }
 .fact.is-two {
+  grid-area: factTwo;
   text-align: center;
 }
+@media (min-width: 1024px) {
+  .fact.is-two .items {
+    display: flex;
+    flex-flow: column wrap;
+    padding-left: 30%;
+  }
+}
 .fact.is-two .main-img {
-  width: 6em;
+  background: transparent;
+  width: 6rem;
+}
+@media (min-width: 1024px) {
+  .fact.is-two .main-img {
+    position: absolute;
+    top: 0;
+    left: 55%;
+    width: calc(7.5rem);
+    z-index: 10;
+  }
 }
 .fact.is-two .item {
   display: flex;
@@ -155,9 +206,12 @@ body * {
   align-items: center;
 }
 .fact.is-two .item .item-icon {
-  flex: 0 0 12%;
-  width: 1.25em;
+  flex: 0 0 7.5%;
+  width: 1.25rem;
   padding-right: 1em;
+}
+.fact.is-three {
+  grid-area: factThree;
 }
 .fact.is-three .item {
   text-align: center;
@@ -166,11 +220,20 @@ body * {
   line-height: 1.2;
 }
 .fact.is-three .item .item-img:nth-of-type(1) {
-  width: 3em;
+  width: 3rem;
+}
+.fact.is-four {
+  grid-area: factFour;
 }
 .fact.is-four .item {
   text-align: center;
 }
+.fact.is-five {
+  grid-area: factFive;
+}
 .fact.is-five .item {
   text-align: center;
+}
+.belly {
+  grid-area: "centerFlag";
 }

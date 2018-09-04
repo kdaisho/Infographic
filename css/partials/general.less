@@ -1,8 +1,17 @@
+@medium: 1024px;
+@large: 1440px;
+
 body * {
     font-family: 'Butcherman', cursive;
     font-size: 100%;
     color: #e00;
     background: #222;
+    @media (min-width: @medium) {
+        // font-size: 110%;
+    }
+    @media (min-width: @large) {
+        // font-size: 130%;
+    }
 }
 
 
@@ -45,4 +54,10 @@ body * {
 
 .size-5 {
     font-size: 1.1em;
+}
+
+@media(min-width: @medium) {
+    .size-2 {
+        font-size: 1.25em;
+    }
 }
