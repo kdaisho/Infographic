@@ -13,6 +13,9 @@ section {
 .uppercase {
   text-transform: uppercase;
 }
+.shadow {
+  text-shadow: 2px 2px 4px #222;
+}
 .lh-2 {
   line-height: 1.2;
 }
