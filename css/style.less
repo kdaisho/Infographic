@@ -4,7 +4,8 @@
 @import "partials/general";
 
 @red: #e00;
-@width-sm: 278px;
+@width-xs: 17.375em;
+@width-sm: 22em;
 @xs: 480px;
 @small: 768px;
 @medium: 1024px;
@@ -22,6 +23,9 @@
         "factThree"
         "factFour"
         "factFive";
+    @media (min-width: @small) {
+        font-size: 1.2em;
+    }
     @media (min-width: @medium) {
         grid-template-areas:
             "heading heading heading heading"
@@ -38,17 +42,18 @@
     align-items: center;
     grid-area: heading;
     justify-content: center;
-    .title {
-        font-family: 'Nosifer', sans-serif;
-        max-width: 22em;
-        text-align: center;
-        width: @width-sm;
+    .title-container {
+        width: @width-xs;
         z-index: 30;
         @media (min-width: @xs) {
-            width: 420px;
         }
         @media (min-width: @small) {
-            width: 590px;
+            width: 30em;
+        }
+        .title {
+            font-family: 'Nosifer', sans-serif;
+            max-width: 22em;
+            text-align: center;
         }
     }
 }
@@ -71,11 +76,15 @@
 
 .fact {
     @media (min-width: @small) {
-        font-size: 140%;
     }
     &.is-one {
         grid-area: factOne;
         .items {
+            @media (min-width: @small) {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: flex-end;
+            }
             @media (min-width: @medium) {
                 display: flex;
                 justify-content: space-around;
@@ -91,55 +100,79 @@
             .suicide {
                 width: 9rem;
             }
+            .desc {
+                @media (min-width: @small) {
+                    font-size: 2em;
+                    span {
+                        font-size: .5em;
+                    }
+                }
+            }
         }
     }
     &.is-two {
         grid-area: factTwo;
         text-align: center;
+        .main-content {
+            @media (min-width: @small) {
+                display: flex;
+            }
+        }
         .bodybag {
-            height: 300px;
+            height: 280px;
+            @media (min-width: @small) {
+                width: 15%;
+            }
         }
         .main-img {
             background: transparent;
             width: 6rem;
             position: absolute;
-            top: -12%;
+            top: -18%;
             left: 50%;
             transform: translateX(-50%);
             @media (min-width: @xs) {
-                top: -22%;
             }
             @media (min-width: @small) {
-                top: -35%;
+                top: -150px;
+                left: 15%;
             }
 
             @media (min-width: @medium) {
-                // top: calc(1px - 5%);
-
                 left: 55%;
                 width: calc(5.5rem + 2%);
                 z-index: 10;
             }
         }
         .items {
-            display: flex;
-            flex-flow: column;
-            align-items: flex-start;
-            width: @width-sm;
+            width: @width-xs;
             margin: 0 auto;
+            @media (min-width: @small) {
+                padding: 2em 0;
+                width: @width-sm;
+            }
             @media (min-width: @medium) {
-                display: flex;
-                flex-flow: column wrap;
                 padding-left: 30%;
             }
             .item {
                 display: flex;
                 flex-flow: row wrap;
                 align-items: center;
+                @media (min-width: @small) {
+                }
+                p {
+                    @media (min-width: @small) {
+                        font-size: 2.5em;
+                        span {
+                            font-size: .5em;
+                        }
+                    }
+                }
                 .item-icon {
-                    // flex: 0 0 7.5%;
                     width: 2.5em;
                     padding-right: 1em;
+                    @media (min-width: @small) {
+                    }
                 }
             }
         }
@@ -147,16 +180,39 @@
 
     &.is-three {
         grid-area: factThree;
+        .main-container {
+            width: @width-xs;
+            margin: 0 auto;
+        }
+        .subtitle-sub {
+            @media (min-width: @small) {
+                font-size: 2.5em;
+                span {
+                    font-size: .5em;
+                }
+            }
+        }
         .items {
             text-align: center;
-            width: @width-sm;
+            width: @width-xs;
             margin: 0 auto;
+            @media (min-width: @small) {
+                display: flex;
+                justify-content: space-around;
+                align-items: flex-start;
+                width: 90%;
+            }
             .desc {
                 line-height: 1.2;
             }
-            .item:nth-of-type(1) {
-                .item-img {
-                    width: 6rem;
+            .item {
+                @media (min-width: @small) {
+                    padding: 0 1em 1.5em;
+                }
+                &:nth-of-type(1) {
+                    .item-img {
+                        width: 6rem;
+                    }
                 }
             }
         }
@@ -167,6 +223,18 @@
             text-align: center;
             img {
                 width: 10rem;
+                @media (min-width: @small) {
+                    padding: 1em 0 0;
+                    width: 14rem;
+                }
+            }
+            .desc {
+                @media (min-width: @small) {
+                    font-size: 2.5em;
+                    span {
+                        font-size: .5em;
+                    }
+                }
             }
         }
     }

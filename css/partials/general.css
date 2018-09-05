@@ -1,6 +1,5 @@
 body * {
   font-family: 'Butcherman', cursive;
-  font-size: 100%;
   color: #e00;
 }
 @media (min-width: 1024px) {
@@ -14,7 +13,7 @@ section {
   text-transform: uppercase;
 }
 .shadow {
-  text-shadow: 2px 2px 4px #222;
+  text-shadow: 5px 5px 15px #000;
 }
 .lh-2 {
   line-height: 1.2;
@@ -55,8 +54,6 @@ section {
 .size-5 {
   font-size: 1.1em;
 }
-@media (min-width: 1024px) {
-  .size-2 {
-    font-size: 1.25em;
-  }
+.center {
+  text-align: center;
 }

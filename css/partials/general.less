@@ -3,13 +3,10 @@
 
 body * {
     font-family: 'Butcherman', cursive;
-    font-size: 100%;
     color: #e00;
     @media (min-width: @medium) {
-        // font-size: 110%;
     }
     @media (min-width: @large) {
-        // font-size: 130%;
     }
 }
 
@@ -21,7 +18,7 @@ section {
 }
 
 .shadow {
-    text-shadow: 2px 2px 4px #222;
+    text-shadow: 5px 5px 15px #000;
 }
 
 .lh-2 {
@@ -52,7 +49,14 @@ section {
 }
 
 .pad-b-1 {
-    padding-bottom: 1.75em;
+    padding-bottom: .75em;
+    @media (min-width: @small) {
+        padding-bottom: 1.75em;
+    }
+}
+
+.pad-t-1 {
+    padding-top: 0;
 }
 
 .size-1 {
@@ -75,8 +79,12 @@ section {
     font-size: 1.1em;
 }
 
-@media(min-width: @medium) {
-    .size-2 {
-        font-size: 1.25em;
+.center {
+    text-align: center;
+}
+
+@media(min-width: @small) {
+    .pad-b-1 {
+        padding-bottom: 0;
     }
 }
