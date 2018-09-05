@@ -4,6 +4,9 @@
 @import "partials/general";
 
 @red: #e00;
+@width-sm: 278px;
+@xs: 480px;
+@small: 768px;
 @medium: 1024px;
 @large: 1440px;
 
@@ -14,8 +17,8 @@
     padding: .5em;
     grid-template-areas:
         "heading"
-        "factOne"
         "factTwo"
+        "factOne"
         "factThree"
         "factFour"
         "factFive";
@@ -39,6 +42,14 @@
         font-family: 'Nosifer', sans-serif;
         max-width: 22em;
         text-align: center;
+        width: @width-sm;
+        z-index: 30;
+        @media (min-width: @xs) {
+            width: 420px;
+        }
+        @media (min-width: @small) {
+            width: 590px;
+        }
     }
 }
 
@@ -49,8 +60,9 @@
 
 .subtitle {
     font-family: 'Nosifer', sans-serif;
-    // font-size: 1.5em;
     text-align: center;
+    z-index: 30;
+    position: relative;
 }
 
 .img-responsive {
@@ -58,6 +70,9 @@
 }
 
 .fact {
+    @media (min-width: @small) {
+        font-size: 140%;
+    }
     &.is-one {
         grid-area: factOne;
         .items {
@@ -70,31 +85,35 @@
             text-align: center;
             &:nth-of-type(1) {
                .suicide {
-                   width: 1.5rem;
+                   width: 2rem;
                }
             }
             .suicide {
-                width: 6rem;
+                width: 9rem;
             }
         }
     }
     &.is-two {
         grid-area: factTwo;
         text-align: center;
-        .items {
-            @media (min-width: @medium) {
-                display: flex;
-                flex-flow: column wrap;
-                padding-left: 30%;
-            }
+        .bodybag {
+            height: 300px;
         }
         .main-img {
             background: transparent;
             width: 6rem;
+            position: absolute;
+            top: -16%;
+            left: 50%;
+            transform: translateX(-50%);
+            @media (min-width: @xs) {
+                top: -22%;
+            }
+            @media (min-width: @small) {
+                top: -35%;
+            }
 
             @media (min-width: @medium) {
-                position: absolute;
-                top: 0;
                 // top: calc(1px - 5%);
 
                 left: 55%;
@@ -102,31 +121,42 @@
                 z-index: 10;
             }
         }
-        .item {
+        .items {
             display: flex;
-            flex-flow: row wrap;
-            align-items: center;
-            .item-icon {
-                flex: 0 0 7.5%;
-                width: 1.25rem;
-                padding-right: 1em;
+            flex-flow: column;
+            align-items: flex-start;
+            width: @width-sm;
+            margin: 0 auto;
+            @media (min-width: @medium) {
+                display: flex;
+                flex-flow: column wrap;
+                padding-left: 30%;
             }
-            .desc {
-
+            .item {
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                .item-icon {
+                    // flex: 0 0 7.5%;
+                    width: 2.5em;
+                    padding-right: 1em;
+                }
             }
         }
     }
 
     &.is-three {
         grid-area: factThree;
-        .item {
+        .items {
             text-align: center;
+            width: @width-sm;
+            margin: 0 auto;
             .desc {
                 line-height: 1.2;
             }
-            .item-img {
-                &:nth-of-type(1) {
-                    width: 3rem;
+            .item:nth-of-type(1) {
+                .item-img {
+                    width: 6rem;
                 }
             }
         }
@@ -135,6 +165,9 @@
         grid-area: factFour;
         .item {
             text-align: center;
+            img {
+                width: 10rem;
+            }
         }
     }
     &.is-five {
@@ -147,4 +180,8 @@
 
 .belly {
     grid-area: "centerFlag";
+    display: none;
+    @media (min-width: @medium) {
+        display: block;
+    }
 }
