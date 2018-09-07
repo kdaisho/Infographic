@@ -15,7 +15,6 @@
     background: @red;
     display: grid;
     grid-gap: .5em;
-    padding: .5em;
     grid-template-areas:
         "heading"
         "factTwo"
@@ -32,8 +31,8 @@
             "factOne factOne factTwo factTwo"
             "factThree belly factTwo factTwo"
             "factThree factFour factFour factFive";
-        grid-template-columns: 1fr auto 1fr 1fr;
-        grid-template-rows: auto 1fr auto 1fr;
+        grid-template-columns: 1.5fr auto .5fr .5fr;
+        grid-template-rows: auto auto auto auto;
     }
 }
 
@@ -120,18 +119,24 @@
             @media (min-width: @small) {
                 display: flex;
             }
+            @media (min-width: @medium) {
+                display: initial;
+            }
         }
         .bodybag {
             height: 280px;
             @media (min-width: @small) {
                 width: 15%;
             }
+            @media (min-width: @medium) {
+                width: 140px;
+            }
         }
         .main-img {
             background: transparent;
             width: 6rem;
             position: absolute;
-            top: -9%;
+            top: -19%;
             left: 50%;
             transform: translateX(-50%);
             @media (min-width: @xs) {
@@ -142,8 +147,9 @@
             }
 
             @media (min-width: @medium) {
-                left: 55%;
-                width: calc(5.5rem + 2%);
+                left: 68%;
+                top: -70px;
+                width: 5rem;
                 z-index: 10;
             }
         }
@@ -155,7 +161,7 @@
                 width: @width-sm;
             }
             @media (min-width: @medium) {
-                padding-left: 30%;
+                // padding-left: 15%;
             }
             .item {
                 display: flex;
@@ -169,6 +175,9 @@
                         span {
                             font-size: .5em;
                         }
+                    }
+                    @media (min-width: @medium) {
+                        white-space: nowrap;
                     }
                 }
                 .item-icon {
@@ -218,9 +227,15 @@
                 @media (min-width: @small) {
                     padding: 0 1em 1.5em;
                 }
+                @media (min-width: @medium) {
+                    flex: 0 0 65%;
+                }
                 &:nth-of-type(1) {
                     .item-img {
                         width: 6rem;
+                    }
+                    @media (min-width: @medium) {
+                        flex: 0 0 20%;
                     }
                 }
             }

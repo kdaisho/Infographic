@@ -153,7 +153,6 @@ section {
   background: #e00;
   display: grid;
   grid-gap: .5em;
-  padding: .5em;
   grid-template-areas: "heading" "factTwo" "factOne" "factThree" "factFour" "factFive";
 }
 @media (min-width: 768px) {
@@ -164,8 +163,8 @@ section {
 @media (min-width: 1024px) {
   .my-app {
     grid-template-areas: "heading heading heading heading" "factOne factOne factTwo factTwo" "factThree belly factTwo factTwo" "factThree factFour factFour factFive";
-    grid-template-columns: 1fr auto 1fr 1fr;
-    grid-template-rows: auto 1fr auto 1fr;
+    grid-template-columns: 1.5fr auto .5fr .5fr;
+    grid-template-rows: auto auto auto auto;
   }
 }
 .heading {
@@ -248,6 +247,11 @@ section {
     display: flex;
   }
 }
+@media (min-width: 1024px) {
+  .fact.is-two .main-content {
+    display: initial;
+  }
+}
 .fact.is-two .bodybag {
   height: 280px;
 }
@@ -256,11 +260,16 @@ section {
     width: 15%;
   }
 }
+@media (min-width: 1024px) {
+  .fact.is-two .bodybag {
+    width: 140px;
+  }
+}
 .fact.is-two .main-img {
   background: transparent;
   width: 6rem;
   position: absolute;
-  top: -9%;
+  top: -19%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -272,8 +281,9 @@ section {
 }
 @media (min-width: 1024px) {
   .fact.is-two .main-img {
-    left: 55%;
-    width: calc(7.5rem);
+    left: 68%;
+    top: -70px;
+    width: 5rem;
     z-index: 10;
   }
 }
@@ -288,9 +298,6 @@ section {
   }
 }
 @media (min-width: 1024px) {
-  .fact.is-two .items {
-    padding-left: 30%;
-  }
 }
 .fact.is-two .items .item {
   display: flex;
@@ -303,6 +310,11 @@ section {
   }
   .fact.is-two .items .item .desc span {
     font-size: .5em;
+  }
+}
+@media (min-width: 1024px) {
+  .fact.is-two .items .item .desc {
+    white-space: nowrap;
   }
 }
 .fact.is-two .items .item .item-icon {
@@ -353,8 +365,18 @@ section {
     padding: 0 1em 1.5em;
   }
 }
+@media (min-width: 1024px) {
+  .fact.is-three .items .item {
+    flex: 0 0 65%;
+  }
+}
 .fact.is-three .items .item:nth-of-type(1) .item-img {
   width: 6rem;
+}
+@media (min-width: 1024px) {
+  .fact.is-three .items .item:nth-of-type(1) {
+    flex: 0 0 20%;
+  }
 }
 .fact.is-four {
   grid-area: factFour;
