@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nosifer|Roboto);
+@import url(https://fonts.googleapis.com/css?family=Creepster|Nosifer|Eater);
 /* ========== Reset Styles =========== */
 /* http://meyerweb.com/eric/tools/css/reset/
 	 v2.0 | 20110126
@@ -76,12 +76,8 @@ a {
   color: inherit;
 }
 body * {
-  font-family: 'Butcherman', cursive;
+  font-family: 'Eater', cursive;
   color: #e00;
-}
-@media (min-width: 1024px) {
-}
-@media (min-width: 1440px) {
 }
 section {
   background: #222;
@@ -147,6 +143,12 @@ section {
     padding-bottom: 0;
   }
 }
+@media (min-width: 1024px) {
+  .pad-tb-1 {
+    padding-top: .5em;
+    padding-bottom: .5em;
+  }
+}
 .my-app {
   background: #e00;
   display: grid;
@@ -162,8 +164,8 @@ section {
 @media (min-width: 1024px) {
   .my-app {
     grid-template-areas: "heading heading heading heading" "factOne factOne factTwo factTwo" "factThree belly factTwo factTwo" "factThree factFour factFour factFive";
-    grid-template-columns: 1fr auto .5fr .5fr;
-    grid-template-rows: .25fr 1fr auto auto;
+    grid-template-columns: 1fr auto 1fr 1fr;
+    grid-template-rows: auto 1fr auto 1fr;
   }
 }
 .heading {
@@ -232,6 +234,11 @@ section {
     font-size: .5em;
   }
 }
+@media (min-width: 1024px) {
+  .fact.is-one .item .desc {
+    font-size: 1.5em;
+  }
+}
 .fact.is-two {
   grid-area: factTwo;
   text-align: center;
@@ -253,14 +260,14 @@ section {
   background: transparent;
   width: 6rem;
   position: absolute;
-  top: -18%;
+  top: -9%;
   left: 50%;
   transform: translateX(-50%);
 }
 @media (min-width: 768px) {
   .fact.is-two .main-img {
-    top: -150px;
-    left: 15%;
+    top: -185px;
+    left: 17%;
   }
 }
 @media (min-width: 1024px) {
@@ -291,10 +298,10 @@ section {
   align-items: center;
 }
 @media (min-width: 768px) {
-  .fact.is-two .items .item p {
-    font-size: 2.5em;
+  .fact.is-two .items .item .desc {
+    font-size: 2em;
   }
-  .fact.is-two .items .item p span {
+  .fact.is-two .items .item .desc span {
     font-size: .5em;
   }
 }
@@ -310,8 +317,16 @@ section {
   margin: 0 auto;
 }
 @media (min-width: 768px) {
+  .fact.is-three .main-container {
+    width: 22em;
+  }
+  .fact.is-three .main-container span {
+    display: block;
+  }
+}
+@media (min-width: 768px) {
   .fact.is-three .subtitle-sub {
-    font-size: 2.5em;
+    font-size: 2em;
   }
   .fact.is-three .subtitle-sub span {
     font-size: .5em;
@@ -326,7 +341,7 @@ section {
   .fact.is-three .items {
     display: flex;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: flex-end;
     width: 90%;
   }
 }
@@ -358,7 +373,7 @@ section {
 }
 @media (min-width: 768px) {
   .fact.is-four .item .desc {
-    font-size: 2.5em;
+    font-size: 2em;
   }
   .fact.is-four .item .desc span {
     font-size: .5em;

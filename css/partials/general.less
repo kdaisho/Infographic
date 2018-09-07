@@ -1,8 +1,9 @@
 @medium: 1024px;
 @large: 1440px;
+@small: 768px;
 
 body * {
-    font-family: 'Butcherman', cursive;
+    font-family: 'Eater', cursive;
     color: #e00;
     @media (min-width: @medium) {
     }
@@ -86,5 +87,12 @@ section {
 @media(min-width: @small) {
     .pad-b-1 {
         padding-bottom: 0;
+    }
+}
+
+@media(min-width: @medium) {
+    .pad-tb-1 {
+        padding-top: .5em;
+        padding-bottom: .5em;
     }
 }
