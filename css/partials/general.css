@@ -34,6 +34,7 @@ section {
 }
 .pad-b-1 {
   padding-bottom: .75em;
+  padding-bottom: 1.75em;
 }
 @media (min-width: 768px) {
   .pad-b-1 {
@@ -60,11 +61,6 @@ section {
 }
 .center {
   text-align: center;
-}
-@media (min-width: 768px) {
-  .pad-b-1 {
-    padding-bottom: 0;
-  }
 }
 @media (min-width: 1024px) {
   .pad-tb-1 {

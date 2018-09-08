@@ -111,6 +111,7 @@ section {
 }
 .pad-b-1 {
   padding-bottom: .75em;
+  padding-bottom: 1.75em;
 }
 @media (min-width: 768px) {
   .pad-b-1 {
@@ -138,11 +139,6 @@ section {
 .center {
   text-align: center;
 }
-@media (min-width: 768px) {
-  .pad-b-1 {
-    padding-bottom: 0;
-  }
-}
 @media (min-width: 1024px) {
   .pad-tb-1 {
     padding-top: .5em;
@@ -155,16 +151,17 @@ section {
   grid-gap: .5em;
   grid-template-areas: "heading" "factTwo" "factOne" "factThree" "factFour" "factFive";
 }
-@media (min-width: 768px) {
-  .my-app {
-    font-size: 1.2em;
-  }
-}
 @media (min-width: 1024px) {
   .my-app {
     grid-template-areas: "heading heading heading heading" "factOne factOne factTwo factTwo" "factThree belly factTwo factTwo" "factThree factFour factFour factFive";
-    grid-template-columns: 1.5fr auto .5fr .5fr;
-    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 1.75fr 6em 1fr .75fr;
+    grid-template-rows: auto auto 3.25em auto;
+  }
+}
+@media (min-width: 1440px) {
+  .my-app {
+    font-size: 130%;
+    grid-template-columns: 2.25fr 6em 1fr .75fr;
   }
 }
 .heading {
@@ -177,9 +174,19 @@ section {
   width: 17.375em;
   z-index: 30;
 }
+@media (min-width: 480px) {
+  .heading .title-container {
+    width: 22em;
+  }
+}
 @media (min-width: 768px) {
   .heading .title-container {
-    width: 30em;
+    width: 34em;
+  }
+}
+@media (min-width: 1440px) {
+  .heading .title-container {
+    width: 56em;
   }
 }
 .heading .title-container .title {
@@ -199,6 +206,47 @@ section {
 }
 .img-responsive {
   width: 100%;
+}
+h1.size-1 {
+  font-size: 2.31em;
+}
+@media (min-width: 480px) {
+  h1.size-1 {
+    font-size: 2.75em;
+  }
+}
+h2.size-2 {
+  font-size: 2.01em;
+}
+@media (min-width: 480px) {
+  h2.size-2 {
+    font-size: 2.5em;
+  }
+}
+.desc {
+  text-align: left;
+  font-size: 1.75em;
+}
+.desc.center {
+  text-align: center;
+}
+.desc span {
+  font-size: 80%;
+}
+@media (min-width: 480px) {
+  .desc {
+    font-size: 2.25em;
+  }
+}
+@media (min-width: 768px) {
+  .desc {
+    font-size: 2em;
+  }
+}
+.flex-vertical {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
 }
 .fact.is-one {
   grid-area: factOne;
@@ -220,27 +268,27 @@ section {
   text-align: center;
 }
 .fact.is-one .item:nth-of-type(1) .suicide {
-  width: 2rem;
+  width: 2em;
 }
 .fact.is-one .item .suicide {
-  width: 9rem;
-}
-@media (min-width: 768px) {
-  .fact.is-one .item .desc {
-    font-size: 2em;
-  }
-  .fact.is-one .item .desc span {
-    font-size: .5em;
-  }
-}
-@media (min-width: 1024px) {
-  .fact.is-one .item .desc {
-    font-size: 1.5em;
-  }
+  width: 9em;
 }
 .fact.is-two {
   grid-area: factTwo;
   text-align: center;
+}
+@media (min-width: 1024px) {
+  .fact.is-two {
+    position: relative;
+    padding: 2em 0 2.5em;
+  }
+}
+@media (min-width: 1440px) {
+  .fact.is-two {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+  }
 }
 @media (min-width: 768px) {
   .fact.is-two .main-content {
@@ -252,12 +300,17 @@ section {
     display: initial;
   }
 }
+@media (min-width: 1440px) {
+  .fact.is-two .main-content {
+    display: flex;
+  }
+}
 .fact.is-two .bodybag {
   height: 280px;
 }
 @media (min-width: 768px) {
   .fact.is-two .bodybag {
-    width: 15%;
+    height: 230px;
   }
 }
 @media (min-width: 1024px) {
@@ -265,13 +318,19 @@ section {
     width: 140px;
   }
 }
+@media (min-width: 1440px) {
+}
 .fact.is-two .main-img {
-  background: transparent;
-  width: 6rem;
+  width: 6em;
   position: absolute;
-  top: -19%;
+  top: -90px;
   left: 50%;
   transform: translateX(-50%);
+}
+@media (min-width: 480px) {
+  .fact.is-two .main-img {
+    top: -30px;
+  }
 }
 @media (min-width: 768px) {
   .fact.is-two .main-img {
@@ -281,41 +340,52 @@ section {
 }
 @media (min-width: 1024px) {
   .fact.is-two .main-img {
-    left: 68%;
-    top: -70px;
-    width: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -290px;
+    width: 5em;
     z-index: 10;
   }
 }
+@media (min-width: 1440px) {
+  .fact.is-two .main-img {
+    left: 12%;
+    top: -400px;
+  }
+}
 .fact.is-two .items {
-  width: 17.375em;
+  display: inline-block;
   margin: 0 auto;
 }
 @media (min-width: 768px) {
   .fact.is-two .items {
     padding: 2em 0;
+    display: flex;
+    flex-flow: column;
+    align-items: left;
+    justify-content: space-around;
+  }
+}
+@media (min-width: 1024px) {
+  .fact.is-two .items {
+    height: 9em;
     width: 22em;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1440px) {
+  .fact.is-two .items {
+    display: flex;
+    padding-left: 2%;
+    flex-flow: column;
+    justify-content: space-around;
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%);
+  }
 }
 .fact.is-two .items .item {
-  display: flex;
   flex-flow: row wrap;
   align-items: center;
-}
-@media (min-width: 768px) {
-  .fact.is-two .items .item .desc {
-    font-size: 2em;
-  }
-  .fact.is-two .items .item .desc span {
-    font-size: .5em;
-  }
-}
-@media (min-width: 1024px) {
-  .fact.is-two .items .item .desc {
-    white-space: nowrap;
-  }
 }
 .fact.is-two .items .item .item-icon {
   width: 2.5em;
@@ -349,12 +419,16 @@ section {
   width: 17.375em;
   margin: 0 auto;
 }
+@media (min-width: 480px) {
+  .fact.is-three .items {
+    width: 70%;
+  }
+}
 @media (min-width: 768px) {
   .fact.is-three .items {
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
-    width: 90%;
   }
 }
 .fact.is-three .items .desc {
@@ -380,6 +454,9 @@ section {
 }
 .fact.is-four {
   grid-area: factFour;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
 }
 .fact.is-four .item {
   text-align: center;
@@ -389,30 +466,33 @@ section {
 }
 @media (min-width: 768px) {
   .fact.is-four .item img {
-    padding: 1em 0 0;
     width: 14rem;
-  }
-}
-@media (min-width: 768px) {
-  .fact.is-four .item .desc {
-    font-size: 2em;
-  }
-  .fact.is-four .item .desc span {
-    font-size: .5em;
   }
 }
 .fact.is-five {
   grid-area: factFive;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
 }
 .fact.is-five .item {
   text-align: center;
 }
 .belly {
   grid-area: "centerFlag";
+  background: #fff;
   display: none;
 }
 @media (min-width: 1024px) {
   .belly {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .belly span {
+    background: #e00;
+    height: 2em;
+    width: 2em;
+    border-radius: 50%;
   }
 }
