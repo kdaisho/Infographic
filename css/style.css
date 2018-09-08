@@ -149,11 +149,11 @@ section {
   background: #e00;
   display: grid;
   grid-gap: .5em;
-  grid-template-areas: "heading" "factTwo" "factOne" "factThree" "factFour" "factFive";
+  grid-template-areas: "heading" "factTwo" "factOne" "factThree" "factFour" "factFive" "footer";
 }
 @media (min-width: 1024px) {
   .my-app {
-    grid-template-areas: "heading heading heading heading" "factOne factOne factTwo factTwo" "factThree belly factTwo factTwo" "factThree factFour factFour factFive";
+    grid-template-areas: "heading heading heading heading" "factOne factOne factTwo factTwo" "factThree belly factTwo factTwo" "factThree factFour factFour factFive" "footer footer footer footer";
     grid-template-columns: 1.75fr 6em 1fr .75fr;
     grid-template-rows: auto auto 3.25em auto;
   }
@@ -167,6 +167,7 @@ section {
 .heading {
   display: flex;
   align-items: center;
+  padding-top: 1.25em;
   grid-area: heading;
   justify-content: center;
 }
@@ -495,4 +496,13 @@ h2.size-2 {
     width: 2em;
     border-radius: 50%;
   }
+}
+.footer {
+  background: #e00;
+  padding: .5em 0 1em;
+  text-align: center;
+  grid-area: footer;
+}
+.footer p {
+  color: #222;
 }

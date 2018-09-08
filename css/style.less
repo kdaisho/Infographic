@@ -21,13 +21,15 @@
         "factOne"
         "factThree"
         "factFour"
-        "factFive";
+        "factFive"
+        "footer";
     @media (min-width: @medium) {
         grid-template-areas:
             "heading heading heading heading"
             "factOne factOne factTwo factTwo"
             "factThree belly factTwo factTwo"
-            "factThree factFour factFour factFive";
+            "factThree factFour factFour factFive"
+            "footer footer footer footer";
         grid-template-columns: 1.75fr 6em 1fr .75fr;
         grid-template-rows: auto auto 3.25em auto;
     }
@@ -40,6 +42,7 @@
 .heading {
     display: flex;
     align-items: center;
+    padding-top: 1.25em;
     grid-area: heading;
     justify-content: center;
     .title-container {
@@ -206,10 +209,8 @@ h2.size-2 {
             margin: 0 auto;
             @media (min-width: @small) {
                 padding: 2em 0;
-                // width: 60%;
                 display: flex;
                 flex-flow: column;
-                // background: yellow;
                 align-items: left;
                 justify-content: space-around;
             }
@@ -220,8 +221,6 @@ h2.size-2 {
             }
 
             @media (min-width: @large) {
-                // width: 60%;
-                // margin-right: 1px;
                 display: flex;
                 padding-left: 2%;
                 flex-flow: column;
@@ -339,5 +338,15 @@ h2.size-2 {
             border-radius: 50%;
 
         }
+    }
+}
+
+.footer {
+    background: @red;
+    padding: .5em 0 1em;
+    text-align: center;
+    grid-area: footer;
+    p {
+        color: #222;
     }
 }
