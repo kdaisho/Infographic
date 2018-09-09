@@ -1,48 +1,16 @@
 // out: style.css
 @import url(https://fonts.googleapis.com/css?family=Creepster|Nosifer|Eater);
 @import "partials/reset";
+@import "partials/variables";
 @import "partials/general";
-
-@red: #e00;
-@width-xs: 17.375em;
-@width-sm: 22em;
-@xs: 480px;
-@small: 768px;
-@medium: 1024px;
-@large: 1440px;
-
-.my-app {
-    background: @red;
-    display: grid;
-    grid-gap: .5em;
-    grid-template-areas:
-        "heading"
-        "factTwo"
-        "factOne"
-        "factThree"
-        "factFour"
-        "factFive"
-        "footer";
-    @media (min-width: @medium) {
-        grid-template-areas:
-            "heading heading heading heading"
-            "factOne factOne factTwo factTwo"
-            "factThree belly factTwo factTwo"
-            "factThree factFour factFour factFive"
-            "footer footer footer footer";
-        grid-template-columns: 1.75fr 6em 1fr .75fr;
-        grid-template-rows: auto auto 3.25em auto;
-    }
-    @media (min-width: @large) {
-        font-size: 130%;
-        grid-template-columns: 2.25fr 6em 1fr .75fr;
-    }
-}
+@import "partials/app-suicide";
+@import "partials/animations";
 
 .heading {
     display: flex;
     align-items: center;
     padding-top: 1.25em;
+    position: relative;
     grid-area: heading;
     justify-content: center;
     .title-container {
@@ -65,18 +33,11 @@
     }
 }
 
-.check {
-    width: 1.25em;
-    vertical-align: middle;
-}
 .subtitle {
     font-family: 'Nosifer', sans-serif;
     text-align: center;
     z-index: 30;
     position: relative;
-}
-.img-responsive {
-    width: 100%;
 }
 
 //font-size
@@ -114,9 +75,8 @@ h2.size-2 {
     justify-content: space-around;
 }
 .fact {
-    @media (min-width: @small) {
-    }
     &.is-one {
+        position: relative;
         grid-area: factOne;
         .items {
             @media (min-width: @small) {
@@ -175,10 +135,8 @@ h2.size-2 {
         }
         .main-img {
             width: 6em;
-            display: inline;
             position: absolute;
             top: -90px;
-            // top: -126px;
             left: 50%;
             transform: translate(-50%, -200%);
             @media (min-width: @xs) {
@@ -230,13 +188,9 @@ h2.size-2 {
             .item {
                 flex-flow: row wrap;
                 align-items: center;
-                @media (min-width: @small) {
-                }
                 .item-icon {
                     width: 2.5em;
                     padding-right: 1em;
-                    @media (min-width: @small) {
-                    }
                 }
             }
         }
@@ -349,44 +303,24 @@ h2.size-2 {
     }
 }
 
-//Animations
-.main-img {
-    @media (max-width: 1023px) {
-        animation: drop 1.5s linear 1s forwards;
+.blood {
+    background: url(../images/blood-01.svg) no-repeat;
+    background-position: right top;
+    background-size: contain;
+    position: absolute;
+    &.is-01 {
+        background-position: right top;
+        transform: scaleX(-1);
+        height: 150px;
+        left: 0;
+        top: -1px;
+        width: 20%;
     }
-}
-@keyframes drop {
-    15% {
-        transform: translate(-50%, 0);
-    }
-    30% {
-        transform: translate(-50%, -50%);
-    }
-    40% {
-        transform: translate(-50%, 0);
-    }
-    50% {
-        transform: translate(-50%, -30%);
-    }
-    70% {
-        transform: translate(-50%, 0);
-    }
-    80% {
-        transform: translate(-50%, -15%);
-    }
-    90% {
-        transform: translate(-50%, 0);
-    }
-    95% {
-        transform: translate(-50%, -7%);
-    }
-    97% {
-        transform: translate(-50%, 0);
-    }
-    99% {
-        transform: translate(-50%, -3%);
-    }
-    100% {
-        transform: translate(-50%, 0);
+    &.is-02 {
+        background-position: right top;
+        height: 80px;
+        right: -1px;
+        top: -1px;
+        width: 20%;
     }
 }

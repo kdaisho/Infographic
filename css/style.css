@@ -82,6 +82,9 @@ body * {
 section {
   background: #222;
 }
+.img-responsive {
+  width: 100%;
+}
 .uppercase {
   text-transform: uppercase;
 }
@@ -130,12 +133,6 @@ section {
 .size-3 {
   font-size: 1.75em;
 }
-.size-4 {
-  font-size: 1.5em;
-}
-.size-5 {
-  font-size: 1.1em;
-}
 .center {
   text-align: center;
 }
@@ -145,29 +142,71 @@ section {
     padding-bottom: .5em;
   }
 }
-.my-app {
+.app-suicide {
+  overflow: hidden;
   background: #e00;
   display: grid;
   grid-gap: .5em;
   grid-template-areas: "heading" "factTwo" "factOne" "factThree" "factFour" "factFive" "footer";
 }
 @media (min-width: 1024px) {
-  .my-app {
+  .app-suicide {
     grid-template-areas: "heading heading heading heading" "factOne factOne factTwo factTwo" "factThree belly factTwo factTwo" "factThree factFour factFour factFive" "footer footer footer footer";
     grid-template-columns: 1.75fr 6em 1fr .75fr;
     grid-template-rows: auto auto 3.25em auto;
   }
 }
 @media (min-width: 1440px) {
-  .my-app {
+  .app-suicide {
     font-size: 130%;
     grid-template-columns: 2.25fr 6em 1fr .75fr;
+  }
+}
+@media (max-width: 1023px) {
+  .main-img {
+    animation: drop 1.5s linear 1s forwards;
+  }
+}
+@keyframes drop {
+  15% {
+    transform: translate(-50%, 0);
+  }
+  30% {
+    transform: translate(-50%, -50%);
+  }
+  40% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -30%);
+  }
+  70% {
+    transform: translate(-50%, 0);
+  }
+  80% {
+    transform: translate(-50%, -15%);
+  }
+  90% {
+    transform: translate(-50%, 0);
+  }
+  95% {
+    transform: translate(-50%, -7%);
+  }
+  97% {
+    transform: translate(-50%, 0);
+  }
+  99% {
+    transform: translate(-50%, -3%);
+  }
+  100% {
+    transform: translate(-50%, 0);
   }
 }
 .heading {
   display: flex;
   align-items: center;
   padding-top: 1.25em;
+  position: relative;
   grid-area: heading;
   justify-content: center;
 }
@@ -195,18 +234,11 @@ section {
   max-width: 22em;
   text-align: center;
 }
-.check {
-  width: 1.25em;
-  vertical-align: middle;
-}
 .subtitle {
   font-family: 'Nosifer', sans-serif;
   text-align: center;
   z-index: 30;
   position: relative;
-}
-.img-responsive {
-  width: 100%;
 }
 h1.size-1 {
   font-size: 2.31em;
@@ -250,6 +282,7 @@ h2.size-2 {
   justify-content: space-around;
 }
 .fact.is-one {
+  position: relative;
   grid-area: factOne;
 }
 @media (min-width: 768px) {
@@ -321,7 +354,6 @@ h2.size-2 {
 }
 .fact.is-two .main-img {
   width: 6em;
-  display: inline;
   position: absolute;
   top: -90px;
   left: 50%;
@@ -505,43 +537,24 @@ h2.size-2 {
 .footer p {
   color: #222;
 }
-@media (max-width: 1023px) {
-  .main-img {
-    animation: drop 1.5s linear 1s forwards;
-  }
+.blood {
+  background: url(../images/blood-01.svg) no-repeat;
+  background-position: right top;
+  background-size: contain;
+  position: absolute;
 }
-@keyframes drop {
-  15% {
-    transform: translate(-50%, 0);
-  }
-  30% {
-    transform: translate(-50%, -50%);
-  }
-  40% {
-    transform: translate(-50%, 0);
-  }
-  50% {
-    transform: translate(-50%, -30%);
-  }
-  70% {
-    transform: translate(-50%, 0);
-  }
-  80% {
-    transform: translate(-50%, -15%);
-  }
-  90% {
-    transform: translate(-50%, 0);
-  }
-  95% {
-    transform: translate(-50%, -7%);
-  }
-  97% {
-    transform: translate(-50%, 0);
-  }
-  99% {
-    transform: translate(-50%, -3%);
-  }
-  100% {
-    transform: translate(-50%, 0);
-  }
+.blood.is-01 {
+  background-position: right top;
+  transform: scaleX(-1);
+  height: 150px;
+  left: 0;
+  top: -1px;
+  width: 20%;
+}
+.blood.is-02 {
+  background-position: right top;
+  height: 80px;
+  right: -1px;
+  top: -1px;
+  width: 20%;
 }
