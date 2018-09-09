@@ -319,14 +319,13 @@ h2.size-2 {
     width: 140px;
   }
 }
-@media (min-width: 1440px) {
-}
 .fact.is-two .main-img {
   width: 6em;
+  display: inline;
   position: absolute;
   top: -90px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -200%);
 }
 @media (min-width: 480px) {
   .fact.is-two .main-img {
@@ -335,7 +334,7 @@ h2.size-2 {
 }
 @media (min-width: 768px) {
   .fact.is-two .main-img {
-    top: -185px;
+    top: -222px;
     left: 17%;
   }
 }
@@ -505,4 +504,54 @@ h2.size-2 {
 }
 .footer p {
   color: #222;
+}
+.main-img {
+  animation: drop 1.5s linear 1s forwards, struggle 0.15s steps(2) 2.5s infinite;
+  width: 100px;
+  height: 760px;
+  background: url(../images/anime02.png) 0 125px no-repeat;
+  background-size: cover;
+}
+@keyframes struggle {
+  0% {
+    background-position: 0 125px;
+  }
+  100% {
+    background-position: -5px -1146px;
+  }
+}
+@keyframes drop {
+  15% {
+    transform: translate(-50%, 0);
+  }
+  30% {
+    transform: translate(-50%, -50%);
+  }
+  40% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -30%);
+  }
+  70% {
+    transform: translate(-50%, 0);
+  }
+  80% {
+    transform: translate(-50%, -15%);
+  }
+  90% {
+    transform: translate(-50%, 0);
+  }
+  95% {
+    transform: translate(-50%, -7%);
+  }
+  97% {
+    transform: translate(-50%, 0);
+  }
+  99% {
+    transform: translate(-50%, -3%);
+  }
+  100% {
+    transform: translate(-50%, 0);
+  }
 }

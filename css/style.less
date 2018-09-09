@@ -167,27 +167,24 @@ h2.size-2 {
         .bodybag {
             height: 280px;
             @media (min-width: @small) {
-                // width: 15%;
                 height: 230px;
             }
             @media (min-width: @medium) {
                 width: 140px;
             }
-            @media (min-width: @large) {
-                // display: none;
-            }
         }
         .main-img {
             width: 6em;
+            display: inline;
             position: absolute;
             top: -90px;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -200%);
             @media (min-width: @xs) {
                 top: -30px;
             }
             @media (min-width: @small) {
-                top: -185px;
+                top: -222px;
                 left: 17%;
             }
 
@@ -348,5 +345,62 @@ h2.size-2 {
     grid-area: footer;
     p {
         color: #222;
+    }
+}
+
+//Animations
+.main-img {
+    // top: -90px;
+    // transform: translate(-50%, 0) !important;
+    // animation: drop 1.5s linear 1s forwards;
+    animation: drop 1.5s linear 1s forwards, struggle .15s steps(2) 2.5s infinite;
+    width: 100px;
+    height: 760px;
+    background: url(../images/anime02.png) 0 125px no-repeat;
+    // background: yellow url(../images/main-img-02.png) no-repeat;
+    background-size: cover;
+}
+@keyframes struggle {
+    0% {
+        background-position: 0 125px;
+    }
+    100% {
+        // background-position: -1526px 0;
+        background-position: -5px -1146px;
+    }
+}
+@keyframes drop {
+    15% {
+        transform: translate(-50%, 0);
+    }
+    30% {
+        transform: translate(-50%, -50%);
+    }
+    40% {
+        transform: translate(-50%, 0);
+    }
+    50% {
+        transform: translate(-50%, -30%);
+    }
+    70% {
+        transform: translate(-50%, 0);
+    }
+    80% {
+        transform: translate(-50%, -15%);
+    }
+    90% {
+        transform: translate(-50%, 0);
+    }
+    95% {
+        transform: translate(-50%, -7%);
+    }
+    97% {
+        transform: translate(-50%, 0);
+    }
+    99% {
+        transform: translate(-50%, -3%);
+    }
+    100% {
+        transform: translate(-50%, 0);
     }
 }
