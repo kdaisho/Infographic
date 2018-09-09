@@ -178,6 +178,7 @@ h2.size-2 {
             display: inline;
             position: absolute;
             top: -90px;
+            // top: -126px;
             left: 50%;
             transform: translate(-50%, -200%);
             @media (min-width: @xs) {
@@ -350,23 +351,8 @@ h2.size-2 {
 
 //Animations
 .main-img {
-    // top: -90px;
-    // transform: translate(-50%, 0) !important;
-    // animation: drop 1.5s linear 1s forwards;
-    animation: drop 1.5s linear 1s forwards, struggle .15s steps(2) 2.5s infinite;
-    width: 100px;
-    height: 760px;
-    background: url(../images/anime02.png) 0 125px no-repeat;
-    // background: yellow url(../images/main-img-02.png) no-repeat;
-    background-size: cover;
-}
-@keyframes struggle {
-    0% {
-        background-position: 0 125px;
-    }
-    100% {
-        // background-position: -1526px 0;
-        background-position: -5px -1146px;
+    @media (max-width: 1023px) {
+        animation: drop 1.5s linear 1s forwards;
     }
 }
 @keyframes drop {

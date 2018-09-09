@@ -505,19 +505,9 @@ h2.size-2 {
 .footer p {
   color: #222;
 }
-.main-img {
-  animation: drop 1.5s linear 1s forwards, struggle 0.15s steps(2) 2.5s infinite;
-  width: 100px;
-  height: 760px;
-  background: url(../images/anime02.png) 0 125px no-repeat;
-  background-size: cover;
-}
-@keyframes struggle {
-  0% {
-    background-position: 0 125px;
-  }
-  100% {
-    background-position: -5px -1146px;
+@media (max-width: 1023px) {
+  .main-img {
+    animation: drop 1.5s linear 1s forwards;
   }
 }
 @keyframes drop {
